@@ -26,7 +26,11 @@ switch ($action){
         $url = $service->getSubmitUrl();
         break;
 }
-$result = json_decode($service->getData($url,$token,$params));
+$result = $service->getData($url,$token,$params);
+if($action === 'list'){
+    $service->log($result);
+}
+$result = json_decode($result);
 
 die(json_encode([
     'status' => 0,

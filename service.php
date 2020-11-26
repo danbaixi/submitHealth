@@ -187,4 +187,11 @@ class service
         curl_close($curl);
         return $result;
     }
+
+    //记录日志
+    public function log($log){
+        $filename='debug.log';
+        $file= fopen($filename,"a+");
+        fwrite($file,Date('Y-m-d H:i:s') . " ".$log . "\n");
+    }
 }
