@@ -92,7 +92,7 @@
         <p class="title">填写状态</p>
         <div class="content">
             <p id="form-status">无</p>
-            <button id="submit-form" class="hidden">提交问卷</button>
+            <button id="submit-form" class="hidden">一键提交问卷</button>
         </div>
     </div>
 
@@ -104,7 +104,7 @@ require_once 'service.php';
 $service = new service();
 ?>
 <script>
-    var url = "wss://byu.educationgroup.cn/sso/qrAuth.ws";
+    var url = "wss://" + "<?php echo $service::DOMAIN ?>" +"/sso/qrAuth.ws";
     var ws = null;
     var dxcount = 0;
     var auth_code = "<?php echo $service->getAuthCode() ?>";
@@ -113,7 +113,7 @@ $service = new service();
     var storageName = 'authToken' //缓存
     var form = {}
     var formData = {}
-    var tbInfo = {}
+    var tbInfo = null
 
     init()
 
@@ -200,7 +200,7 @@ $service = new service();
 
     function refreshQrCode(){
         var time = new Date().getTime();
-        document.getElementById('qr-code').setAttribute('src',"https://byu.educationgroup.cn/sso/qrAuth/qrcode?auth_code="+auth_code+"&serverUID="+serverUID+"&time="+time)
+        document.getElementById('qr-code').setAttribute('src',"<?php echo $service->getQrCodeUrl() ?>"+auth_code+"&serverUID="+serverUID+"&time="+time)
     }
 
     //document.getElementById('getList').addEventListener('click',getList)
@@ -267,6 +267,7 @@ $service = new service();
             if(data.tbInfo){
                 tbInfo = data.tbInfo
                 dom.innerText = '已填写，填写时间：' + data.tbInfo.scrq
+                document.getElementById('submit-form').className = 'hidden'
             }else{
                 dom.innerText = '未填写'
                 document.getElementById('submit-form').className = 'display'

@@ -27,6 +27,11 @@ class service
         return self::getBaseUrl() . '/sso/auth';
     }
 
+    // 二维码链接
+    public function getQrCodeUrl(){
+        return self::getBaseUrl() . "/sso/qrAuth/qrcode?auth_code=";
+    }
+
     // 提交登录
     public function getLoginUrl(){
         return self::getBaseUrl() . '/sso/auth/login';
@@ -107,7 +112,7 @@ class service
             'Accept-Language:zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
             'Cache-Control:max-age=0',
             'Connection:keep-alive',
-            'Host:byu.educationgroup.cn',
+            'Host:' . self::DOMAIN,
             'Upgrade-Insecure-Requests:1',
             'User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0',
         ];
