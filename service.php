@@ -174,7 +174,7 @@ class service
             "cookie: ".$cookie
         ));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_POST, 1);
+        //curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curl, CURLOPT_COOKIE,$cookie);
@@ -182,7 +182,9 @@ class service
         if($data){
             curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
         }
-        $this->log(curl_error($curl));
+        if(curl_error($curl)){
+            $this->log(curl_error($curl));
+        }
         $result = curl_exec($curl);
         curl_close($curl);
         return $result;
