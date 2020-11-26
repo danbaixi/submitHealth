@@ -96,7 +96,18 @@
             <button id="submit-form" class="hidden">一键提交问卷</button>
         </div>
     </div>
-
+    <div class="section">
+        <p class="title">免责声明</p>
+        <div class="content">
+            本项目仅限学习使用，请如实上报疫情防控健康信息，配合国家疫情防控工作，产生的一切后果由使用者自负。
+        </div>
+    </div>
+    <div class="section">
+        <p class="title">开源地址</p>
+        <div class="content">
+            <a href="https://github.com/danbaixi/submitHealth" target="_blank">点击访问GitHub</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
