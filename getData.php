@@ -4,7 +4,7 @@ error_reporting(0);
 
 $token = $_GET['token'];
 $action = $_GET['action'];
-$params = $_GET['params'];
+$params = $_GET['params'] ? $_GET['params'] : null;
 
 if($params){
     $params = json_decode(urldecode($params),true);

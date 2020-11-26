@@ -182,9 +182,7 @@ class service
         if($data){
             curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
         }
-        if(curl_error($curl)){
-            $this->log(curl_error($curl));
-        }
+        $this->log(curl_error($curl));
         $result = curl_exec($curl);
         curl_close($curl);
         return $result;
