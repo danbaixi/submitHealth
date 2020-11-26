@@ -1,4 +1,7 @@
 # 一键完成疫情防控健康上报
+<p align="center">
+    <img width="300" src="http://qiniu.yunxiaozhi.cn/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20201126140455.png" />
+</p>
 
 ## 免责声明
 本项目仅限学习使用，请如实上报疫情防控健康信息，配合国家疫情防控工作，产生的一切后果由使用者自负。
@@ -23,3 +26,9 @@ const DOMAIN = 'byu.educationgroup.cn';
 ```
 在浏览器访问`/scan.php`即可   
 
+## 在线使用
+访问`https://www.yunxiaozhi.cn/submitHealth/scan.php`   
+[点击直达](https://www.yunxiaozhi.cn/submitHealth/scan.php)
+
+## 开源许可证
+[MIT](https://github.com/danbaixi/submitHealth/blob/main/LICENSE)
