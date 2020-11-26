@@ -70,7 +70,8 @@
         <p class="title">登录状态</p>
         <div class="content">
             <div id="un-login">
-                <p>未登录，请扫描二维码登录（长按识别无效）</p>
+                <p>未登录，请扫描二维码登录</p>
+                <p>微信上直接长按二维码登录，登录后返回</p>
                 <img src="" id="qr-code">
             </div>
             <div id="login" class="hidden">
